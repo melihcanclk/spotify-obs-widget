@@ -17,12 +17,22 @@ const getSong = async () => {
     });
     const data = await response.json();
     if (data && data.track_name && data.track_name !== current_track_name && data.artist_name !== current_artist_name && data.album_name !== current_album_name && data.album_image !== current_album_image) {
-        track_name.innerHTML = data.track_name;
-        artist_name.innerHTML = data.artist_name;
-        album_name.innerHTML = data.album_name;
-        album_image.src = data.album_image;
+        const song_container = document.getElementsByClassName('song-container');
+        // add song-container-animation class to song-container
+        song_container[0].classList.add('song-container-animation');
 
-        head_title.innerText = data.track_name + ' - ' + data.artist_name + ' ';
+        // remove song-container-animation class from song-container after 1s
+        setTimeout(() => {
+            song_container[0].classList.remove('song-container-animation');
+
+            track_name.innerHTML = data.track_name;
+            artist_name.innerHTML = data.artist_name;
+            album_name.innerHTML = data.album_name;
+            album_image.src = data.album_image;
+
+            head_title.innerText = data.track_name + ' - ' + data.artist_name + ' ';
+        }, 500);
+
     }
 }
 
