@@ -25,7 +25,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: 470px;
+  height: 170px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
