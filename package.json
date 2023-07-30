@@ -1,0 +1,31 @@
+{
+  "name": "spotify-obs-widget",
+  "version": "1.0.0",
+  "description": "Spotify obs widget that user logged in and show its currently playing song",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melihcanclk/spotify-obs-widget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melihcanclk/spotify-obs-widget/issues"
+  },
+  "homepage": "https://github.com/melihcanclk/spotify-obs-widget#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
