@@ -35,6 +35,12 @@ body {
   padding: 10px;
 }
 
+.no-song-playing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .song-details {
   flex: 1;
   overflow: hidden;

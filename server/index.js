@@ -98,9 +98,7 @@ app.get('/current-playing-song', async (req, res) => {
             });
         } else {
             // not playing
-            res.send({
-                is_playing: false
-            });
+            res.send({});
         }
 
     } catch (error) {
