@@ -87,32 +87,19 @@ app.get('/current-playing-song', async (req, res) => {
             const artist_name = response.data.item.artists.map(artist => artist.name).join(' - ');
             const album_name = response.data.item.album.name;
             const album_image = response.data.item.album.images[0].url;
-
             const is_playing = response.data.is_playing;
-            if (!is_playing) {
-                res.send({
-                    track_name: '',
-                    artist_name: '',
-                    album_name: '',
-                    album_image: ''
-                });
-            }
-            else {
-                res.send({
-                    track_name,
-                    artist_name,
-                    album_name,
-                    album_image
-                });
-            }
 
-        } else {
-            // no song is playing
             res.send({
-                track_name: 'No song is playing',
-                artist_name: '',
-                album_name: '',
-                album_image: ''
+                track_name,
+                artist_name,
+                album_name,
+                album_image,
+                is_playing
+            });
+        } else {
+            // not playing
+            res.send({
+                is_playing: false
             });
         }
 
