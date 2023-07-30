@@ -1,36 +1,75 @@
 html {
-    background-color: #4b4b4b;
-    height: 100vh;
-    width: 100vw;
+  background-color: #4b4b4b;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    color: white;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .song-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    transition: transform 2.5s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-#album-image {
-    max-height: 150px;
-    padding-right: 10px;
+.song-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.song-details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.album-image {
+  max-height: 150px;
+  padding-right: 10px;
+}
+
+.track-name,
+.artist-name,
+.album-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @keyframes song-container-animation {
-    from {
-      transform: translateX(100%); /* Start the text outside the element on the right */
-    }
-    to {
-      transform: translateX(0); /* Slide the text back to its original position */
-    }
+
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
   }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
